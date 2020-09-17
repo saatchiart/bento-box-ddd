@@ -6,6 +6,7 @@ namespace SaatchiArt\BentoBoxDDD\SecondaryAdapters\Repositories;
 
 use Illuminate\Database\ConnectionInterface as Database;
 use SaatchiArt\BentoBoxDDD\Entities\ArtworkEntity;
+use SaatchiArt\BentoBoxDDD\Events\ArtworkUpdatedEvent;
 use SaatchiArt\BentoBoxDDD\Services\UserActions\SecondaryAdapters\Repositories\ArtworkRepositoryInterface;
 
 final class ArtworkRepository implements ArtworkRepositoryInterface
@@ -31,7 +32,6 @@ final class ArtworkRepository implements ArtworkRepositoryInterface
                 return new ArtworkEntity($row->id, $row->isForSale);
             })
             ->toArray();
-
     }
 
     public function storeArtwork(ArtworkEntity $artwork): void
@@ -43,5 +43,7 @@ final class ArtworkRepository implements ArtworkRepositoryInterface
                 'id' => $artwork->getId(),
                 'is_for_sale' => $artwork->isForSale(),
             ]);
+
+        \event(new ArtworkUpdatedEvent($artwork->getId()));
     }
 }

@@ -6,6 +6,7 @@ namespace SaatchiArt\BentoBoxDDD\SecondaryAdapters\Repositories;
 
 use Illuminate\Database\ConnectionInterface as Database;
 use SaatchiArt\BentoBoxDDD\Entities\UserEntity;
+use SaatchiArt\BentoBoxDDD\Events\UserUpdatedEvent;
 use SaatchiArt\BentoBoxDDD\Exceptions\UserNotFoundException;
 use SaatchiArt\BentoBoxDDD\Services\UserActions\SecondaryAdapters\Repositories\UserRepositoryInterface;
 
@@ -45,5 +46,7 @@ final class UserRepository implements UserRepositoryInterface
                 'id' => $user->getId(),
                 'is_on_vacation' => $user->isOnVacation(),
             ]);
+
+        \event(new UserUpdatedEvent($user->getId()));
     }
 }
