@@ -32,6 +32,6 @@ final class UserController
             ], 404);
         }
 
-        return \response()->json(['success' => true]);
+        return \response()->json(['success' => true], 200);
     }
 }

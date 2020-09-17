@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace SaatchiArt\BentoBoxDDD\Entities;
+namespace SaatchiArt\BentoBoxDDD\Entities\Users;
 
 final class UserEntity
 {

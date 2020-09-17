@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace SaatchiArt\BentoBoxDDD\SecondaryAdapters\Repositories;
 
 use Illuminate\Database\ConnectionInterface as Database;
-use SaatchiArt\BentoBoxDDD\Entities\UserEntity;
+use SaatchiArt\BentoBoxDDD\Entities\Users\UserEntity;
 use SaatchiArt\BentoBoxDDD\Events\UserUpdatedEvent;
 use SaatchiArt\BentoBoxDDD\Exceptions\UserNotFoundException;
 use SaatchiArt\BentoBoxDDD\Services\UserActions\SecondaryAdapters\Repositories\UserRepositoryInterface;

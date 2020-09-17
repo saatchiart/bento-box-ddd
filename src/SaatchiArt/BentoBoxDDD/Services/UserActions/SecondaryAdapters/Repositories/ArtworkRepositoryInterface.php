@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace SaatchiArt\BentoBoxDDD\Services\UserActions\SecondaryAdapters\Repositories;
 
-use SaatchiArt\BentoBoxDDD\Entities\ArtworkEntity;
+use SaatchiArt\BentoBoxDDD\Entities\Artworks\ArtworkEntity;
 
 interface ArtworkRepositoryInterface
 {
