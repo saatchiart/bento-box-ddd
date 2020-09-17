@@ -1,0 +1,11 @@
+{
+    "autoload": {
+      "psr-4": {
+        "\\": "src"
+      }
+    },
+    "require": {
+        "psr/http-message": "^1.0",
+        "illuminate/database": "^8.4"
+    }
+}
